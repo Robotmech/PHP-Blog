@@ -306,3 +306,11 @@ a.text-secondary {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
+.ports {
+    background: linear-gradient(135deg, #7767c5, #6822a5);
+    border-radius: 40px;
+    max-width: max-content;
+    padding: 40px;
+
+}

@@ -14,7 +14,6 @@ require_once __DIR__ . '/manager.php';
         <a class="nav-link active" href="<?= BASE_URL ?>blog/addblog.php">Write Blog</a>
         <a class="nav-link active" href="<?= BASE_URL ?>about.php">About</a>
         <a class="nav-link active" href="<?= BASE_URL ?>Port.php">Check out other Sites</a>
-        <p><em>To Write a Blog you must be Logged in  *Try to Break this Site*</em></p>
       </div>
     </div>
     <form class="form-inline my-2 my-lg-0">

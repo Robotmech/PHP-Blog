@@ -22,12 +22,14 @@ require_once "manager.php";
 </head>
 <body>
     <?php include "navbar.php"?>
+    <div class="ports">
     <ul>
     <?php foreach ($bloggers as $blogger) : ?> 
         <li> 
             <a target="_blank" href="<?= $blogger["blog_url"]?>"><?= $blogger["name_lernender"] ?></a>
         </li>
     <?php endforeach; ?>
-</ul>
+    </ul>
+    </div>
 </body>
 </html>

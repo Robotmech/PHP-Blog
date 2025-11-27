@@ -57,7 +57,7 @@ else
                 </div>
                 <form method="post">  
                 <input type="text" class="form-control mt-1" name="email" placeholder="Email">
-                <input type="text" class="form-control mt-1" name="password" placeholder="Password">
+                <input type="password" class="form-control mt-1" name="password" placeholder="Password">
                 <?php
                 if(!empty($errormsg))
                 {
