@@ -4,6 +4,10 @@ ini_set('display_errors', '1');
 
 ob_start();
 session_start();
+header("X-Content-Type-Options: nosniff");
+header("X-Frame-Options: SAMEORIGIN");
+header("Referrer-Policy: strict-origin-when-cross-origin");
+header("Content-Security-Policy: default-src 'self'; img-src 'self' https: data:; style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; script-src 'self' https://cdn.jsdelivr.net; base-uri 'self'; form-action 'self'");
 
 if (!defined('BASE_URL')) {
     define('BASE_URL', '/NewBlog/');
@@ -25,7 +29,7 @@ $options = [
 try {
     $db = new PDO($dsn, $user, $pass, $options);
 } catch (PDOException $e) {
-    echo 'Database connection failed: ' . $e->getMessage();
+    echo 'Database connection failed';
     exit;
 }
 
@@ -51,9 +55,14 @@ $bloginfo = $query->fetchAll(PDO::FETCH_ASSOC);   // ensure list has image_url
 
 // fetch single post for blog.php
 if (isset($_GET['blogid'])) {
-    $stmt = $db->prepare("SELECT * FROM blog WHERE blogid = ?");
-    $stmt->execute([intval($_GET['blogid'])]);
-    $info = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+    $blogId = filter_input(INPUT_GET, 'blogid', FILTER_VALIDATE_INT);
+    if ($blogId !== null && $blogId !== false) {
+        $stmt = $db->prepare("SELECT * FROM blog WHERE blogid = ?");
+        $stmt->execute([$blogId]);
+        $info = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+    } else {
+        $info = [];
+    }
 }
 
 ?>

@@ -4,9 +4,9 @@ require_once "manager.php";
 if($_POST)
 {
     // POST 
-    $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = md5($_POST["password"]);
+    $username = trim(strip_tags($_POST["username"] ?? ''));
+    $email = trim($_POST["email"] ?? '');
+    $password = md5($_POST["password"] ?? '');
 
     if($username!="" && $email!="" && $password!="")
     {
@@ -69,7 +69,7 @@ if($_POST)
                 {
                     ?>
                     <div class="alert alert-success mt-1" role="alert">
-                    <?php echo $errormsg;?>
+                    <?php echo htmlspecialchars($errormsg ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </div>
                     <?php
                 }

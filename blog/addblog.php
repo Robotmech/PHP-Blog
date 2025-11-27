@@ -8,7 +8,7 @@ if(!isset($_SESSION["email"]))
 
 if($_POST)
 {
-    $title = trim($_POST["title"] ?? '');
+    $title = trim(strip_tags($_POST["title"] ?? ''));
     $text = trim($_POST["text"] ?? '');
     $image_url = trim($_POST["image_url"] ?? '');
     $titlenumber = strlen($title);
@@ -23,6 +23,7 @@ if($_POST)
                 $stmt = $db->prepare("INSERT INTO blog (blogtitle, blogtext, user, time, image_url) VALUES (?, ?, ?, ?, ?)");
                 $ok = $stmt->execute([
                     $title,
+                    // store as-is, escape on output
                     $text,
                     $username,
                     date("Y-m-d H:i:s"),
@@ -59,7 +60,7 @@ if($_POST)
                 {
                     ?>
                     <div class="alert alert-success mt-1" role="alert">
-                    <?php echo htmlspecialchars($errormsg);?>
+                    <?php echo htmlspecialchars($errormsg ?? '', ENT_QUOTES, 'UTF-8'); ?>
                     </div>
                     <?php
                 }

@@ -13,9 +13,11 @@ if(!isset($_SESSION["email"]))
 
 if($_GET)
 {
-    $blogid = intval($_GET["blogid"]);
-    $query = $db->prepare("DELETE FROM blog WHERE blogid=?");
-    $query->execute(array($_GET["blogid"]));
+    $blogid = filter_input(INPUT_GET, "blogid", FILTER_VALIDATE_INT);
+    if ($blogid !== null && $blogid !== false) {
+        $query = $db->prepare("DELETE FROM blog WHERE blogid=?");
+        $query->execute(array($blogid));
+    }
     header("Location: ../index.php");
 }
 ?>

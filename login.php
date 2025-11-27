@@ -63,7 +63,7 @@ else
                 {
                     ?>
                     <div class="alert alert-success mt-1" role="alert">
-                    <?php echo $errormsg;?>
+                    <?php echo htmlspecialchars($errormsg, ENT_QUOTES, 'UTF-8');?>
                     </div>
                     <?php
                 }
