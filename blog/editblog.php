@@ -1,5 +1,4 @@
 <?php
-// cannot access the page if there is no session
 require_once "../manager.php";
 
 if($authority == "User")

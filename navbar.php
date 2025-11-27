@@ -11,6 +11,7 @@ require_once __DIR__ . '/manager.php';
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>index.php">Home</a>
         <a class="nav-link active" href="<?= BASE_URL ?>blog/addblog.php">Write Blog</a>
+        <p><em>To Write a Blog you must be Logged in</em></p>
       </div>
     </div>
     <form class="form-inline my-2 my-lg-0">

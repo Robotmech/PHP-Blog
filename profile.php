@@ -1,7 +1,6 @@
 <?php
 require_once "manager.php";
 
-// cannot access the page if there is no session
 if(!isset($_SESSION["email"]))
 {
     header("Location: index.php");
