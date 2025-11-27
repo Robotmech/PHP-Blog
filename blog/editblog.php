@@ -15,6 +15,7 @@ if($_POST)
 {
     $edittitle = trim(strip_tags($_POST["edittitle"] ?? ''));
     $edittext = trim($_POST["edittext"] ?? '');
+    $editimage = trim(strip_tags($_POST['editimage'] ??''));
     $titlenumber = strlen($edittitle);
     $url = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI'];
     if($titlenumber > 80)
@@ -23,8 +24,8 @@ if($_POST)
     }
     else
     {
-        $query = $db->prepare("UPDATE blog SET blogtitle=?, blogtext=? WHERE blogid=?");
-        $update = $query->execute(array($edittitle, $edittext, (int)($info["blogid"] ?? 0)));
+        $query = $db->prepare("UPDATE blog SET blogtitle=?, blogtext=?, image_url=? WHERE blogid=?");
+        $update = $query->execute(array($edittitle, $edittext, $editimage, (int)($info["blogid"] ?? 0)));
         if($update)
         {
             $errormsg = "Updated.";
@@ -53,8 +54,8 @@ if($_POST)
             <div class="col-md-8">
                 <form method="POST">
                     <input type="text" class="form-control" name="edittitle" value="<?php echo htmlspecialchars($info["blogtitle"] ?? '', ENT_QUOTES, 'UTF-8')?>">
-                    <textarea class="form-control mt-1" name="edittext" cols="30" rows="60"><?php echo htmlspecialchars($info["blogtext"] ?? '', ENT_QUOTES, 'UTF-8')?></textarea>
-               
+                    <textarea class="form-control mt-1" name="edittext" cols="10" rows="20"><?php echo htmlspecialchars($info["blogtext"] ?? '', ENT_QUOTES, 'UTF-8')?></textarea>
+                    <input type="url" class="form-control mt-1" name="editimage" value="<?php echo htmlspecialchars($info["image_url"] ?? '', ENT_QUOTES, 'UTF-8')?>"> 
             </div>
             <div class="col-md-4">
                 <button type="submit" class="btn btn-warning">Update</button>

@@ -3,7 +3,7 @@ require_once __DIR__ . '/manager.php';
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?= BASE_URL ?>index.php">Blog System</a>
+    <a class="navbar-brand" href="<?= BASE_URL ?>index.php">L'Acide</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,7 +11,8 @@ require_once __DIR__ . '/manager.php';
       <div class="navbar-nav">
         <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>index.php">Home</a>
         <a class="nav-link active" href="<?= BASE_URL ?>blog/addblog.php">Write Blog</a>
-        <a class="nav-link-active" href="<?= BASE_URL ?>blog/about.php">About us</a>
+        <a class="nav-link active" href="<?= BASE_URL ?>about.php">About</a>
+        <a class="nav-link active" href="<?= BASE_URL ?>Port.php">Check out other Sites</a>
         <p><em>To Write a Blog you must be Logged in  *Try to Break this Site*</em></p>
       </div>
     </div>
@@ -27,7 +28,7 @@ require_once __DIR__ . '/manager.php';
               Admin Panel
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="<?= BASE_URL ?>blog/blogs">Manage Blogs</a>
+              <a class="dropdown-item" href="<?= BASE_URL ?>blog.php">Manage Blogs</a>
             </div>
         </div>
           <?php

@@ -247,13 +247,14 @@ input[type="file"].image:focus {
 }
 
 a {
-    color: #667eea;
+    color: #121730;
+    font-weight: 700;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #332d9a;
+    color: #cccae2;
     text-decoration: none;
 }
 
@@ -284,4 +285,24 @@ a:hover {
 
 a.text-secondary {
     text-decoration: none;
+}
+
+
+.About_text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #000000;
+    margin-top: 15px;
+    font-weight: 700;
+    background-color: #25262c;
+    background: linear-gradient(135deg, #32469f 0%, #22063f 100%);
+    
+    padding: 40px;
+}
+
+.smallimg {
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
