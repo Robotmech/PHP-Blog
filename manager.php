@@ -47,15 +47,13 @@ if(isset($_SESSION["email"]))
 
 $query = $db->prepare("SELECT * FROM blog order by blogid desc");
 $query->execute();
-$blognumber = $query->rowCount();
-$bloginfo = $query->fetchAll(PDO::FETCH_ASSOC);
+$bloginfo = $query->fetchAll(PDO::FETCH_ASSOC);   // ensure list has image_url
 
-if($_GET)
-{
-    $blogid = intval($_GET["blogid"]);
-    $query = $db->prepare("SELECT * FROM blog WHERE blogid=?");
-    $query->execute(array($_GET["blogid"]));
-    $info = $query->fetch(PDO::FETCH_ASSOC);
+// fetch single post for blog.php
+if (isset($_GET['blogid'])) {
+    $stmt = $db->prepare("SELECT * FROM blog WHERE blogid = ?");
+    $stmt->execute([intval($_GET['blogid'])]);
+    $info = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 }
 
 ?>

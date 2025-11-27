@@ -9,6 +9,7 @@ CREATE TABLE `blog` (
   `blogid` int(255) NOT NULL,
   `blogtitle` varchar(80) NOT NULL,
   `blogtext` mediumtext NOT NULL,
+  `image_url` varchar(2048) NULL,
   `user` varchar(255) NOT NULL,
   `time` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4_bin;

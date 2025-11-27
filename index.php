@@ -22,8 +22,10 @@ require_once "manager.php";
             
               <div class="card mt-1">
               <div class="card-body">
-                <a href="blog/blog.php?blogid=<?php echo $blog["blogid"];?>"><h5 class="card-title text-dark"><?php echo $blog["blogtitle"]?></h5></a>
-                <img src="../uploads/<?php echo $blog["image"];?>" class="img-fluid mt-2" alt="">
+                <a href="blog/blog.php?blogid=<?php echo $blog["blogid"];?>"><h5 class="card-title text-dark"><?php echo htmlspecialchars($blog["blogtitle"]); ?></h5></a>
+                <?php if (!empty($blog["image_url"])): ?>
+                  <img src="<?php echo htmlspecialchars($blog["image_url"]); ?>" class="img-fluid mt-2" alt="" loading="lazy">
+                <?php endif; ?>
                 <?php
                  if($numberofcharacters > 200)
                  {

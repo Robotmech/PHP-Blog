@@ -16,8 +16,9 @@ require_once "../manager.php";
             <div class="col-md-1-12 mx-auto">
             <div class="card text-center">
             <div class="card-body">
-                <h5 class="card-title"><?php echo $info["blogtitle"];?></h5>
-                <p class="card-text  text-break"><?php echo $info["blogtext"];?></p>
+                <h5 class="card-title"><?php echo htmlspecialchars($info["blogtitle"] ?? ''); ?></h5>
+                <img src="<?php echo htmlspecialchars($info["image_url"]); ?>" style="max-width:400px; max-height:400px;" class="img-fluid mt-2" alt="" loading="lazy">
+                <p class="card-text text-break mt-2"><?php echo nl2br(htmlspecialchars($info["blogtext"] ?? '')); ?></p>
                 <?php
                 if($authority == "Admin")
                 {

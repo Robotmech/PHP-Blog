@@ -1,4 +1,3 @@
-/* Global Styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #3e445e 0%, #5a517f 100%);
@@ -192,14 +191,12 @@ body {
     color: #6c757d !important;
 }
 
-/* Textarea Styles */
 textarea.form-control {
     min-height: 150px;
     resize: vertical;
     font-family: inherit;
 }
 
-/* File Input Styles */
 input[type="file"].image {
     display: block;
     margin-top: 15px;
@@ -240,12 +237,10 @@ input[type="file"].image:focus {
     color: #ffffff !important;
 }
 
-/* Container Styles */
 .container, .container-fluid {
     background-color: transparent;
 }
 
-/* Link Styles */
 a {
     color: #667eea;
     text-decoration: none;
@@ -257,7 +252,6 @@ a:hover {
     text-decoration: none;
 }
 
-/* List Group Styles */
 .list-group-item {
     border: none;
     border-radius: 10px !important;
@@ -278,7 +272,6 @@ a:hover {
     font-weight: 600;
 }
 
-/* Text Break */
 .text-break {
     word-wrap: break-word;
     word-break: break-word;
