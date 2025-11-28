@@ -8,12 +8,13 @@
 <body>
     <?php include "navbar.php"?>
     <div class="ratio ratio-16x9">
-      <iframe src="https://www.youtube.com/embed/4K8IEzXnMYk?si=6f6EGJj2-p5Sp0TR"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
-              
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/6ey4yAgLZlw?si=VcGPoGrjwWo6OjCI"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+        loading="lazy"></iframe>
     </div>
 </body>
 </html>
