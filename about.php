@@ -22,7 +22,7 @@ require_once "manager.php";
                     <li>Check out my Socials:</li>
                 </ul>
                 <div class="Social_Links">
-                    <a href="https://github.com/Schizomech"><img class="smallimg" src="img/Octicons-mark-github.svg" alt="GitHub"></a>
+                    <a href="https://github.com/Robotmech"><img class="smallimg" src="img/Octicons-mark-github.svg" alt="GitHub"></a>
                     <a href="https://www.linkedin.com/in/romeo-arisona/"><img class="smallimg" src="img/linkedin-big-logo.svg" alt="LinkedIn"></a>
                     <a href="https://www.instagram.com/rrarisona/"><img class="smallimg" src="img/Instagram_logo_2016.svg" alt="Instagram"></a>
                 </div>

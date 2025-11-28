@@ -313,5 +313,8 @@ a.text-secondary {
     border-radius: 40px;
     max-width: max-content;
     padding: 40px;
-
+    position: relative;
+    margin: 10px;
+    transition: transform 0.3s ease;
 }
+
